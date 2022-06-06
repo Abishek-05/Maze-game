@@ -24,6 +24,8 @@ function generateMaze(event)
 
 	if(dims > 40)
 		return alert("Maze is too large!!!");
+	if(dims <= 0)
+		return alert("Maze size must be between 1 and 40");
 	
 	form.style.display = "none"; //Once we get the input remove the form
 	sliderDiv.style.display = ""; //Display the hidden slider
