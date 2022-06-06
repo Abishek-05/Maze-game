@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maze</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<form id="settings" action="/Proj2/settings.js">
+		<h1><b><u>Maze generator</u></b></h1>
+		<p>Enter Rows/Columns (Max:40):</p>
+		<input id="dimensions" class="box" type="number" value="20">
+		<br>
+		<br>
+		<input id="submit" class="buttons generateButton" type="submit" value="Generate Maze">
+	</form>
+
+	<!-- Use display: none to hide the slider div initially. Once form is submitted, show the div -->
+	<div class="game-container">
+		<div class="sliderDiv" style="display:none">
+			<div style="font-size: 24px"><b>Speed:</b>
+			</div>
+			<br>
+			<input id="myRangeSlider" type="range" min="50" max="1000" value="500">
+		</div>
+		<canvas class="maze"></canvas>
+	</div>
+
+	<div class="completed" style="display:none">
+		<h2><b>Congratulations !!!</b></h2>
+		<h4>You have solved the maze!</h4>
+		<div style="display: inline">
+			<button class="replay buttons playButton">Play again</button>
+			<button class="close buttons closeButton">Close</button>
+		</div>
+	</div>
+	<div class="solution" style="display:none">
+		<label for="soln">Solution using: </label>
+		<select name="soln" id="soln">
+			<option hidden>Choose</option>
+			<option id="op_dfs" value="DFS">DFS</option>
+			<option id="op_bfs" value="BFS">BFS</option>
+			<option id="op_a*" value="A* Algorithm">A* Algorithm</option>
+		</select>
+	</div>
+	
+	<script src="./maze.js"></script>
+	<script src="./settings.js"></script>
+	<script src="./solution.js"></script>
+</body>
+</html>

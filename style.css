@@ -1,0 +1,153 @@
+html {
+	height: 100vh;
+}
+body 
+{
+	max-width: max-content;
+	margin: auto;
+	background: rgba(149, 102, 219, 1.0);
+	background: -webkit-linear-gradient(top right, rgba(149, 102, 219, 1.0), rgba(75, 220, 107, 1.0));
+	background: -moz-linear-gradient(top right, rgba(149, 102, 219, 1.0), rgba(75, 220, 107, 1.0));
+	background: linear-gradient(to bottom left, rgba(149, 102, 219, 1.0), rgba(75, 220, 107, 1.0));
+	background-repeat: no-repeat;
+	min-height: 95vh;
+	width: 100vw;
+	background-size: cover;
+}
+#settings
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+
+	background-color: black;
+	padding: 3%;
+	width: 110%; 
+	margin-top: 10%;
+
+	border-radius: 50px;
+	color: white;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.box
+{
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	padding: 5px;
+	border: 4px solid violet;
+	border-radius: 10px;
+}
+
+.buttons{
+	border-radius: 40px;
+	padding: 10px;
+	color: white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.generateButton {
+	background-color: blueviolet;
+}
+.generateButton:hover{
+	background-color: blue;
+	opacity: 0.9;
+}
+
+.playButton{
+	background-color: rgb(12, 171, 12);
+}
+.playButton:hover {
+	background-color: darkgreen;
+	opacity: 0.9;
+}
+
+.closeButton {
+	background-color: red;
+}
+.closeButton:hover {
+	background-color: rgba(255, 0, 0, 0.548);
+	opacity: 0.9;
+}
+/* Grid and slider */
+.game-container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 120%;
+	height:100%;
+	justify-content: center;
+	align-items: center;
+}
+.maze {
+	margin: 5%;
+}
+.sliderDiv{
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+	color: white;
+	width: 200%;
+	padding: 2% 0% 2% 2%;
+	border-radius: 1rem;
+	margin: -30% 0 0 0;
+}
+/* slider settings */
+#myRangeSlider 
+{
+	-webkit-appearance: none;
+	width: 80%;
+	height: 5px;
+	background: black;
+	outline: none;
+	border: 3px solid lawngreen;
+	border-radius: 8px;
+}
+#myRangeSlider::-webkit-slider-thumb
+{
+	-webkit-appearance: none;
+	appearance: none;
+	width:15px;
+	height: 30px;
+	background: black;
+	cursor: pointer;
+	border: 3px solid lawngreen;
+	border-radius: 4px;
+}
+#myRangeSlider::-moz-range-thumb
+{
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 30px;
+	background: black;
+	cursor: pointer;
+	border: 3px solid lawngreen;
+	border-radius: 4px;
+}
+.solution,option
+{
+	float: right;
+	margin: -30%;
+	background-color: black;
+	color: white;
+	padding: 2%;
+	border-radius: 10px;
+}
+.completed
+{
+	display: flex;
+	position:absolute;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+
+	background-color: black;
+	padding: 3%;
+	width: 50%;
+	margin-top: -40%;
+
+	border-radius: 50px;
+	color: white;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
