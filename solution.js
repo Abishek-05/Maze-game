@@ -61,6 +61,7 @@ function dfs()
 			grid[i][j].highlight(n,n,'black'); //set all cells to black initially
 		}
 	}
+	grid[n-1][n-1].highlight(n,n,'lightgreen');//Destination is set as green
 	t = current; //Save the curent before modifying it
 	stack.push(current);
 	current.visited = true;
@@ -72,9 +73,10 @@ function dfs()
 
 		if(current.rowNum == n-1 && current.colNum == n-1)
 		{
-			current.highlight(n,n,'blue');
+			current.highlight(n,n,'lightgreen');
 			current = t; //Replace current to where it was initally when user asked for solution
 			current.highlight(n,n,'yellow'); //Make starting point as yellow
+
 			return;
 		}
 		addStackNeighbours(current);
@@ -95,6 +97,7 @@ function dfs()
 					grid[i][j].highlight(n,n,'black'); //set all cells to black initially
 				}
 			}
+			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
 	}
@@ -147,6 +150,7 @@ function bfs()
 			parentArray[i][j] = dummy; //Assign dummy to all cells of parentArray
 		}
 	}
+	grid[n-1][n-1].highlight(n,n,'lightgreen');
 	t = current; //Save the curent before modifying it
 	parentArray[current.rowNum][current.colNum] = current; //Current cell will not have a parent. So assign it as current itself
 	queue.push(current);
@@ -157,7 +161,7 @@ function bfs()
 		//make it visited inside addQueueNeighbours()
 		if(current.rowNum == n-1 && current.colNum == n-1)
 		{	
-			current.highlight(n,n,'blue');
+			current.highlight(n,n,'lightgreen');
 			//Colouring the path
 			current = t; //Replace current to where it was initally when user asked for solution
 			let curr_cell = parentArray[dims-1][dims-1];
@@ -188,6 +192,7 @@ function bfs()
 					parentArray[i][j] = dummy;
 				}
 			}
+			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
 	}
@@ -239,6 +244,7 @@ function aStar()
 		for(var j=0; j<n; j++)
 			grid[i][j].highlight(n,n,'black'); //set all cells to black initially
 
+	grid[n-1][n-1].highlight(n,n,'lightgreen');
 	t = current; //Save the curent before modifying it
 
 	let f = distance(current);
@@ -270,7 +276,7 @@ function aStar()
 
 		if(current.rowNum == n-1 && current.colNum == n-1)
 		{	
-			current.highlight(n,n,'blue');
+			current.highlight(n,n,'lightgreen');
 			//Colouring the path
 			let curr_cell = par;
 			current = t; //Replace current to where it was initally when user asked for solution
@@ -293,7 +299,7 @@ function aStar()
 			h = f + g;
 			par = current; 
 
-			if(open.has(neighbours[i]))	//if key exits in open
+			if(open.has(neighbours[i]))//if key exits in open
 			{	
 				if(g < open.get(neighbours[i]).gscore)
 					open.set(neighbours[i],{fscore:f, gscore:g, hscore:h,parent:par});
@@ -312,6 +318,7 @@ function aStar()
 			for(var i=0; i<n; i++)
 				for(var j=0; j<n; j++)
 					grid[i][j].highlight(n,n,'black');
+			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
 	}
