@@ -97,6 +97,7 @@ function dfs()
 					grid[i][j].highlight(n,n,'black'); //set all cells to black initially
 				}
 			}
+			dfs_flag = false;
 			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
@@ -192,6 +193,7 @@ function bfs()
 					parentArray[i][j] = dummy;
 				}
 			}
+			bfs_flag = false;
 			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
@@ -318,6 +320,8 @@ function aStar()
 			for(var i=0; i<n; i++)
 				for(var j=0; j<n; j++)
 					grid[i][j].highlight(n,n,'black');
+			
+			astar_flag = false;
 			grid[n-1][n-1].highlight(n,n,'lightgreen');
 			return;
 		}
