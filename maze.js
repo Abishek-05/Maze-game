@@ -66,6 +66,7 @@ class Maze
 		else if(this.stack.length == 0)
 		{
 			current.highlight(this.rows,this.columns,'yellow');
+			this.grid[this.rows-1][this.columns-1].highlight(this.rows,this.columns,'lightgreen'); //Make destination as green
 			generationComplete = true;
 			sliderDiv.style.opacity = "0%"; //Hide the slider after generation
 			solution.style.display="";//Show solution drop down menu
